@@ -3,5 +3,7 @@ env = gym.make('CartPole-v0')
 env.reset()
 for _ in range(1000):
     env.render()
-    env.step(env.action_space.sample()) # take a random action
+    newObservation, reward, done, info = env.step(env.action_space.sample()) # take a random action
+    print (env.observation_space.high, env.observation_space.low)
+
 env.close()
