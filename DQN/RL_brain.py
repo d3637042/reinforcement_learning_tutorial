@@ -64,9 +64,9 @@ class DeepQNetwork:
         self.s = tf.placeholder(tf.float32, [None, self.n_features], name='s')  # input
         self.q_target = tf.placeholder(tf.float32, [None, self.n_actions], name='Q_target')  # for calculating loss
         with tf.variable_scope('eval_net'):
-                c_names, n_l1, w_initializer, b_initializer = \
-                ['eval_net_params', tf.GraphKeys.GLOBAL_VARIABLES], 24, \
-                tf.initializers.he_uniform(), tf.initializers.he_uniform()  # config of layers
+            c_names, n_l1, w_initializer, b_initializer = \
+            ['eval_net_params', tf.GraphKeys.GLOBAL_VARIABLES], 24, \
+            tf.initializers.he_uniform(), tf.initializers.he_uniform()  # config of layers
 
             # first layer. collections is used later when assign to target net
             with tf.variable_scope('l1'):
